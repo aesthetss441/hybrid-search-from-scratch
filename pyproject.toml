@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hsearch"
+version = "0.1.0"
+description = "Hybrid search from scratch: a readable HNSW vector index, a BM25 inverted index and reciprocal rank fusion in NumPy, verified against hnswlib and FAISS."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Jubayer Siddiki Ayan" }]
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+bench = ["hnswlib>=0.8", "faiss-cpu>=1.8", "datasets>=2.19", "pillow"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
